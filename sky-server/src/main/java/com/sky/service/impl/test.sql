@@ -1,0 +1,1 @@
+select d.*, c.name as categoryName from dish d left outer join category c on d.category_id = c.id;

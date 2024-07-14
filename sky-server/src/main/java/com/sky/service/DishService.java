@@ -39,4 +39,10 @@ public interface DishService {
      * @param dishDTO
      */
     void updateWithFlavor(DishDTO dishDTO);
+
+    /**
+     * 根据id查询菜品信息
+     * @param id
+     */
+    void startOrStop(Integer status, Long id);
 }

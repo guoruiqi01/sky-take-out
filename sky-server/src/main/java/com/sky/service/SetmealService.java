@@ -13,4 +13,10 @@ public interface SetmealService {
      */
     void saveWithDish(SetmealDTO setmealDTO);
 
+    /**
+     * 分页查询套餐
+     * @param pageQueryDTO
+     * @return
+     */
+    PageResult pageQuery(SetmealPageQueryDTO pageQueryDTO);
 }

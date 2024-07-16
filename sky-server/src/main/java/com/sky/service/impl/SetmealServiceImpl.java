@@ -55,4 +55,16 @@ public class SetmealServiceImpl implements SetmealService {
         // 添加套餐和菜品的关系
         setmealDishMapper.insertBatch(setmealDishes);
     }
+
+    /**
+     * 分页查询套餐
+     * @param pageQueryDTO
+     * @return
+     */
+    @Override
+    public PageResult pageQuery(SetmealPageQueryDTO pageQueryDTO) {
+        PageHelper.startPage(pageQueryDTO.getPage(), pageQueryDTO.getPageSize());
+        Page<SetmealVO> page = setmealMapper.pageQuery(pageQueryDTO);
+        return new PageResult(page.getTotal(), page.getResult());
+    }
 }

@@ -31,4 +31,12 @@ public interface ShoppingCartMapper {
 
     @Delete("delete from shopping_cart where user_id = #{userId}")
     void clean(Long userId);
+
+
+    /**
+     * 删除一条菜品/套餐数据
+     * @param id
+     */
+    @Delete("delete from shopping_cart where id = #{id}")
+    void moveById(Long id);
 }

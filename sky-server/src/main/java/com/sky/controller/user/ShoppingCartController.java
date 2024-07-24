@@ -55,4 +55,16 @@ public class ShoppingCartController {
         shoppingCartService.clean();
         return Result.success();
     }
+
+    /**
+     * 删除购物车中的一个菜品/套餐
+     * @param shoppingCartDTO
+     * @return
+     */
+    @PostMapping("/sub")
+    @ApiOperation("删除购物车中的一个菜品/套餐")
+    public Result move(@RequestBody ShoppingCartDTO shoppingCartDTO) {
+        shoppingCartService.move(shoppingCartDTO);
+        return Result.success();
+    }
 }
